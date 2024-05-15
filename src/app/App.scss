@@ -6,17 +6,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.courses-list__course:nth-child(3n+1) {
-  --course-color: #ffcc74;
-}
 
-.courses-list__course:nth-child(3n+2) {
-  --course-color: #ff8c00;
-}
-
-.courses-list__course:nth-child(3n+3) {
-  --course-color: #ff5722;
-}
 
 .courses-list {
   display: flex;
