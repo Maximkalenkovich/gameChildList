@@ -1,5 +1,5 @@
-import React from 'react';
-import './TagList.scss'; // импорт файла со стилями
+import React, { memo } from 'react';
+import './TagList.scss';
 
 interface TagListProps {
     tags: string[];
@@ -7,14 +7,21 @@ interface TagListProps {
     onTagClick: (tag: string) => void;
 }
 
-export const TagList: React.FC<TagListProps> = ({ tags, selectedTag, onTagClick }) => {
+export const TagList: React.FC<TagListProps> = memo(({ tags, selectedTag, onTagClick }) => {
+    console.log('tag')
     return (
         <div className="tag-list">
             {tags.map((tag) => (
-                <button key={tag} className={`tag-button ${selectedTag === tag ? 'selected' : ''}`} onClick={() => onTagClick(tag)}>
+                <button
+                    key={tag}
+                    className={`tag-button ${selectedTag === tag ? 'selected' : ''}`}
+                    onClick={() => onTagClick(tag)}
+                >
                     {tag}
                 </button>
             ))}
         </div>
     );
-};
+});
+
+
