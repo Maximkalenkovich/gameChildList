@@ -1,5 +1,4 @@
-import React, {useEffect, useMemo, useState} from 'react';
-import {Course,getCourses} from "../api/api";
+import React, {useMemo} from 'react';
 import {TagList} from "../components/tagList/TagList";
 import './App.scss';
 import {CoursesList} from "../components/courses/CoursesList";
