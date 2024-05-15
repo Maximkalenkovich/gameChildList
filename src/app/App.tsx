@@ -1,13 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import './App.css';
 import {Course,getCourses} from "../api/api";
 import {TagList} from "../components/tagList/TagList";
-import '../styles/styles.scss';
-
-
-
-
-
+import './App.scss';
+import {CoursesList} from "../components/courses/CoursesList";
 
 
 const App: React.FC = () => {
@@ -48,15 +43,14 @@ const App: React.FC = () => {
     return (
         <div className="App">
             <TagList tags={getUniqueTags()} selectedTag={selectedTag} onTagClick={handleTagClick} />
-          <ul>
+          <div className={'courses-list'}>
             {filteredCourses.map((course) => (
-                <li key={course.id}>
-                  <img src={course.image} alt={course.name} />
-                  <h2>{course.name}</h2>
-                  <p>{course.tags.join(', ')}</p>
-                </li>
+                <div className={'courses-list__course'}>
+                    <CoursesList name={course.name} id={course.id} image={course.image} />
+                </div>
+
             ))}
-          </ul>
+          </div>
         </div>
     );
   }

@@ -1,0 +1,58 @@
+.App {
+  display: flex;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.courses-list__course:nth-child(3n+1) {
+  --course-color: #ffcc74;
+}
+
+.courses-list__course:nth-child(3n+2) {
+  --course-color: #ff8c00;
+}
+
+.courses-list__course:nth-child(3n+3) {
+  --course-color: #ff5722;
+}
+
+.courses-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding: 24px;
+}
+
+.courses-list__course {
+  margin-bottom: 24px;
+  background-color: #f5f5f5;
+  border-radius: 18px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #e6e6e6;
+  }
+
+}
+
+.courses-list__course img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px 18px 0 0;
+  background-color: var(--course-color);
+}
+
+.courses-list__course h2 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 16px;
+}
+
+
+
